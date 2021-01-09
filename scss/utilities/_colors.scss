@@ -1,0 +1,42 @@
+// Colors. Black and white.
+$black: #000;
+$white: #fff;
+$off-white: lighten($black, 95%);
+
+// Colors. Grays.
+
+$light-green: #e8f3eC;
+
+// Colors.
+$red: #f16541;
+$gray: #919191;
+$dark-gray: darken($gray, 20%);
+$light-gray: lighten($gray, 30%);
+$green: #e6f1ea;
+
+// Defaults.
+$default-heading-color: $black;
+$media-bg: $off-white;
+
+// Implementations. Body.
+$link-default: $black;
+$link: $red;
+$hover: $gray;
+$visited: $gray;
+
+// Implementations. Menus.
+$menu-default: $black;
+
+$main-menu-link: $black;
+$main-menu-hover: $red;
+
+$menu-item: $gray;
+$menu-item-link: $black;
+$menu-item-hover: $gray;
+$menu-active: $red;
+
+$menu-body: $gray;
+
+// Implementations. Misc.
+$border: $light-gray;
+$accent: $light-green;

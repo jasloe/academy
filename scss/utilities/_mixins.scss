@@ -1,0 +1,194 @@
+$default: 1.3rem;
+$large: 2.7rem;
+$medium: 2.1rem;
+$small: 1.3rem;
+$menu: 1rem;
+$caption: .9rem;
+
+$open-margin-top: 6.25rem; // translates to 100px;
+
+@mixin max-width {
+  max-width: $wide;
+  margin: 0 auto;
+}
+
+// Titles.
+@mixin title-sans {
+  font-family: $display-sans;
+  text-transform: uppercase;
+}
+
+@mixin title-serif {
+  font-family: $display-serif;
+  text-transform: initial;
+}
+
+@mixin hard-rule-top {
+  border-top: 1px solid $gray;
+}
+
+// Menus.
+@mixin menu-header {
+  @include title-sans;
+  @include font-size($menu);
+  letter-spacing: 0.03rem;
+}
+
+// Breadcrumb.
+@mixin breadcrumb {
+  @include font-size(1.5rem);
+  font-family: $display-serif;
+}
+
+// Copy.
+@mixin body {
+  font-family: $body-serif;
+  @include font-size($default);
+  line-height: 1.4;
+
+  em {
+    font-family: $dignitasital;
+  }
+
+  strong {
+    font-family: $dignitasbold;
+    font-weight: 900;
+  }
+}
+
+// Links. Body, cta.
+@mixin body-links {
+  font-family: $body-serif;
+}
+
+@mixin cta-link {
+  font-family: $cta-link;
+}
+
+@mixin cta-box {
+  font-family: $cta-link;
+}
+
+// Menu items.
+@mixin menu-item-header {
+  font-family: $primary-menu-font;
+  text-transform: uppercase;
+  @include font-size($menu);
+}
+
+@mixin menu-item {
+  font-family: $secondary-menu-font;
+  @include font-size($menu);
+}
+
+@mixin menu-body {
+  font-family: $secondary-menu-font;
+  @include font-size($menu);
+}
+
+// Link states.
+@mixin color-transition {
+  transition: color .33s ease;
+}
+
+@mixin link-states {
+  a {
+    @include color-transition;
+  }
+
+  a.is-active,
+  a:hover,
+    {
+    color: $menu-active;
+  }
+
+  a.is-active:hover {
+    color: $menu-default;
+  }
+}
+
+@mixin link-border {
+  @include color-transition;
+
+  a {
+    padding-bottom: 4px;
+    border-bottom: 1px solid;
+    border-bottom-color: inherit;
+  }
+
+  a:hover {
+    border-bottom: none;
+  }
+}
+
+// Card states.
+@mixin card-states {
+  @include color-transition;
+
+  &:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 0.9;
+    // color: darken($gray, 30%);
+    color: $dark-gray;
+  }
+
+  .card-link {
+    opacity: 0;
+    font-size: 0;
+  }
+
+  .card-link a span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+// Captions.
+@mixin caption {
+  @include font-size($caption);
+  color: $black;
+  font-family: $body-serif;
+}
+
+// "More."
+@mixin more {
+  text-transform: uppercase;
+  @include cta-link;
+}
+
+@mixin edit {
+  @include font-size(.9rem);
+  color: $black;
+  font-family: $edit;
+  text-transform: uppercase;
+
+  &:hover {
+    color: red !important;
+  }
+}
+
+// Rules
+@mixin border-top {
+  border-top: 1px solid $border;
+}
+
+@mixin border-bottom {
+  border-bottom: 1px solid $border;
+}
+
+// Gutters.
+@mixin gutter {
+  padding-left: 4%;
+  padding-right: 4%;
+}
+
+// No gutters.
+@mixin no-gutter {
+  padding-left: 0;
+  padding-right: 0;
+}

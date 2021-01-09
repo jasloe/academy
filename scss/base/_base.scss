@@ -1,0 +1,37 @@
+// Box-sizing default.
+*,
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 0;
+  margin: 0;
+
+  @include mq($from: mobile) {
+    line-height: 1.4;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a,
+a:link,
+a:active,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+figure {
+  margin: 0;
+  padding: 0;
+}

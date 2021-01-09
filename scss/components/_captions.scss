@@ -1,0 +1,14 @@
+.blazy__caption {
+  padding: .5rem 1rem 0 1rem;
+
+  @include mq($from: wide) {
+    padding: .5rem 1rem 0 0rem;
+  }
+}
+
+.blazy__caption,
+.blazy__caption p,
+.slide__description {
+  @include caption;
+  line-height: 1;
+}

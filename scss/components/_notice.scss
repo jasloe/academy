@@ -1,0 +1,93 @@
+.region-callout .flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.region-callout .flex .press-inquiries-rome {
+  align-self: flex-end;
+}
+
+.field-events-security-notice,
+.region-callout .callout-wrapper {
+  background-color: $accent;
+  margin-top: 3rem;
+  padding: 3rem;
+}
+
+.region-callout .callout {
+  padding-bottom: 2rem;
+
+  &:last-child {
+    padding-bottom: 0rem;
+  }
+}
+
+.region-callout h2 {
+  @include title-sans;
+  @include font-size($menu);
+  padding-top: 0rem;
+  padding-bottom: 0.3rem;
+  line-height: 1.5;
+}
+
+.field-events-security-notice h3,
+.region-callout h2.block-title {
+  @include title-serif;
+  @include font-size($medium);
+  padding-top: 0rem;
+  padding-bottom: 2rem;
+}
+
+.field-events-security-notice .field,
+.region-callout p {
+  @include font-size(1.1rem);
+  line-height: 1.5;
+}
+
+.region-callout .holiday-notice {
+  @include gutter;
+  width: 100%;
+  padding-top: 0.5rem;
+
+  p {
+    line-height: 1;
+    @include font-size($caption);
+  }
+}
+
+@include mq($from: desktop) {
+  .region-callout .holiday-notice {
+    width: 75%;
+  }
+}
+
+@include mq($from: mobile) {
+  .region-callout .flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .callout {
+    flex-basis: 50%;
+  }
+
+  .callout:nth-child(-n + 1) {
+    padding-bottom: 2rem;
+  }
+
+  .callout:nth-child(n + 3) {
+    padding-bottom: 0rem;
+  }
+}
+
+@include mq($from: desktop) {
+  .region-callout .flex {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .callout {
+      flex-basis: 25%;
+      padding-bottom: 0rem;
+    }
+  }
+}

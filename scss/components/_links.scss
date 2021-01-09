@@ -1,0 +1,120 @@
+// Defaults.
+a {
+  color: $link-default;
+}
+
+.body a {
+  border-bottom: 1px solid $black;
+}
+
+.body a:hover {
+  transition: color .22s ease;
+  border-bottom: none;
+  color: $gray;
+}
+
+// Breadcrumb link states.
+.breadcrumb {
+  // @include menu-links;
+}
+
+// More & read more.
+.card .more {
+  background-image: url(../images/arrow_large_black.svg);
+  height: 30px;
+}
+
+.read-more {
+  @include more;
+  padding-top: 1rem;
+}
+
+// File downloads.
+.path-publications {
+  .file {
+    margin-top: 1rem;
+  }
+
+  .file span {
+    font-family: $tradegothiccond !important;
+    @include font-size(1rem);
+  }
+}
+
+.path-publications .file,
+.download {
+  font-family: $tradegothiccond;
+  text-transform: uppercase;
+
+  a {
+    border-bottom: 2px solid $black;
+    transition: all 0.22s;
+    @include font-size(1rem);
+  }
+
+  a:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 0.9;
+    transition: all 0.22s;
+    border-bottom: none;
+  }
+}
+
+.file-download,
+.path-publications .link {
+  margin-top: 1rem;
+
+  a {
+    font-family: $tradegothiccond;
+    border-bottom: 2px solid $black;
+    @include font-size(1rem);
+    text-transform: uppercase;
+    color: $black;
+    transition: all 0.22s;
+  }
+
+  a:hover {
+    border-bottom: none;
+    transition: all 0.22s;
+  }
+}
+
+
+// Infinite scroll pager.
+.js-pager__items {
+  li {
+    text-align: right;
+  }
+
+  a {
+    font-family: $tradegothiccond;
+    border-bottom: 2px solid $black;
+    @include font-size(1rem);
+    text-transform: uppercase;
+    transition: all 0.22s;
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+}
+
+// Research link states.
+.list-wrapper .record {
+
+  .resource-title,
+  .resource-description p {
+    a {
+      color: $link;
+    }
+
+    a:hover {
+      color: $hover;
+    }
+
+    a:visited {
+      color: $visited;
+    }
+  }
+}

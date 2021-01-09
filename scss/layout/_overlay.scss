@@ -1,0 +1,87 @@
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+}
+
+#overlay {
+  display: none;
+}
+
+// #overlay.open {
+//   display: initial;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100vh;
+//   width: 100%;
+//   z-index: 2;
+//   background-color: $white;
+// }
+
+// #overlay {
+//   .menu-container {
+//     margin: 0 auto;
+//     max-width: 400px;
+//   }
+
+//   .menu-container .flex {
+//     margin-top: 5rem;
+//   }
+
+//   .menu-container .flex {
+//     display: flex;
+//     flex-direction: row;
+//   }
+
+//   .menu-container .flex {}
+
+//   .menu-container .flex .logo {
+//     display: block;
+//     background-image: url(../images/AAR.svg);
+//     background-repeat: no-repeat;
+//     max-width: 100%;
+//     height: 75px;
+//     // text-indent: -9000px;
+//     margin-top: 3px;
+//     content: "";
+//   }
+
+//   .menu-wrapper {
+//     ul.menu {
+//       display: flex;
+//       flex-direction: column;
+//       line-height: 1;
+//     }
+//   }
+
+//   .menu-wrapper {
+//     ul.menu li.menu-item {
+//       @include footer-links-dark;
+
+//       a {
+//         @include title-serif;
+//         letter-spacing: 0.03rem;
+//         text-transform: uppercase;
+//         @include font-size(3.1rem);
+//       }
+//     }
+//   }
+
+//   .menu-wrapper {
+//     ul.menu li.menu-item ul.menu li {
+//       display: none;
+//     }
+//   }
+
+//   @include mq($from: desktop) {
+//     ul.menu li.menu-item ul.menu li.menu-item {
+//       display: initial;
+//       @include footer-links-light;
+
+//       a {
+//         @include font-size(1rem);
+//         text-transform: initial;
+//       }
+//     }
+//   }
+// }

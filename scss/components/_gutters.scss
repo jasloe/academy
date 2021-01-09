@@ -1,0 +1,89 @@
+// add'l gutter settings found in captions, page_titles, content (page sections)
+.region-page-title,
+.breadcrumb {
+  @include gutter;
+}
+
+@include mq($from: wide) {
+
+  .region-page-title,
+  .breadcrumb {
+    @include no-gutter;
+  }
+}
+
+// section indices, news/events indices
+@include mq($from: desktop, $until: wide) {
+
+  .path-people,
+  .path-events,
+  .path-news,
+  .path-society-of-fellows,
+  .section-front {
+    .region-content {
+      @include gutter;
+    }
+  }
+}
+
+// People overrides.
+.path-people .region-content {
+  @include no-gutter;
+}
+
+@include mq($from: mobile) {
+  .path-people .region-content {
+    @include gutter;
+  }
+}
+
+@include mq($from: wide) {
+  .path-people .region-content {
+    @include no-gutter;
+  }
+
+}
+
+// section front, news/events index blocks
+.path-events,
+.path-news,
+.path-society-of-fellows,
+.section-front {
+
+  h2,
+  p,
+  .type,
+  .read-more {
+    @include gutter;
+  }
+
+  .more {
+    margin-left: 1rem;
+  }
+}
+
+@include mq($from: desktop) {
+
+  .path-events,
+  .path-news,
+  .path-society-of-fellows,
+  .section-front {
+
+    h2,
+    p,
+    .type,
+    .read-more {
+      @include no-gutter;
+    }
+
+    .more {
+      margin-left: 0rem;
+    }
+  }
+}
+
+.path-news.path-news-press-releases .region-content,
+.path-node .resource-list,
+  {
+  margin-top: $open-margin-top;
+}

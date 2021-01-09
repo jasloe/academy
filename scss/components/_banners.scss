@@ -1,0 +1,41 @@
+// notice
+
+.notice {
+  background-color: $black;
+  text-align: center;
+  line-height: 1 !important;
+  opacity: 1;
+  padding: 1rem !important;
+  margin-bottom: 3rem;
+  margin-top: 3.25rem;
+
+  .field p {
+    font-family: $body-serif;
+    color: $white;
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+  }
+}
+
+// eu cookie
+.eu-cookie-compliance-banner {
+  border-top: 1px solid $black;
+  background-color: $white;
+  opacity: 1;
+}
+
+.popup-content {
+  background-color: $white;
+  opacity: 1;
+}
+
+.path-home {
+  .eu-cookie-compliance-banner {
+    h2 {
+      @include title-serif;
+    }
+  }
+}

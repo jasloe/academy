@@ -1,0 +1,223 @@
+$hamburger-padding-x: 0px;
+$hamburger-padding-y: 0px;
+$hamburger-layer-width: 1rem;
+$hamburger-layer-height: 2px;
+$hamburger-layer-spacing: 4px;
+$hamburger-layer-border-radius: 0px;
+$hamburger-hover-opacity: 0.7;
+$hamburger-active-hover-opacity: $hamburger-hover-opacity;
+// $hamburger-layer-color: $current-color;
+// $hamburger-active-layer-color: $hamburger-layer-color;
+
+@import "../vendor/hamburgers/hamburgers";
+
+// Main menu spacing, typography.
+header {
+  @include menu-header;
+  padding: 1rem 4%;
+  background: $white;
+}
+
+.region-header .header-menu {
+  display: flex;
+  align-items: center;
+}
+
+// Show/hide main menu items.
+@include mq($from: $mobile-menu) {
+
+  .hamburger {
+    display: none;
+  }
+
+  .region-header .header-menu {
+    justify-content: space-between;
+  }
+}
+
+@include mq($until: $mobile-menu) {
+
+  .region-header .header-menu {
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: inline-block;
+  }
+
+  .header-menu nav {
+    display: none;
+  }
+}
+
+// Language switcher positioning.
+.language-switcher-language-url li {
+  padding-right: 0.5rem;
+}
+
+.language-switcher-language-url li.en {
+  position: relative;
+
+  &::after {
+    content: "/";
+    display: inline-block;
+    padding-left: 0.5rem;
+  }
+}
+
+ul.language-switcher-language-url.hamburger,
+.main-menu__utilities {
+  display: flex;
+  align-items: center;
+}
+
+ul.language-switcher-language-url {
+  display: flex;
+}
+
+// More main menu spacing, flex, mq.
+.region-header .header-menu .main-menu {
+  display: flex;
+}
+
+.main-menu li {
+  padding-right: 2rem;
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+// Footer menu.
+footer p {
+  @include menu-body;
+}
+
+.footer-menu>ul>li>a {
+  @include menu-item-header;
+  letter-spacing: .03rem;
+}
+
+.footer-menu>ul>li>ul>li.menu-item,
+.region-footer-second a,
+.region-footer-second p {
+  @include menu-item;
+}
+
+.footer-menu>ul>li>ul>li.menu-item {
+  padding-left: 15px;
+  text-indent: -15px;
+}
+
+// Footer legal separators.
+.legal li.menu-item {
+  &:after {
+    padding-right: .4rem;
+    padding-left: .2rem;
+    content: "\B7";
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+}
+
+// Social media.
+.social .menu li a,
+.search a,
+.card .more {
+  display: block;
+  background-repeat: no-repeat;
+  text-indent: -9000px;
+  vertical-align: top;
+}
+
+.social .menu li a {
+  margin-right: 0.8em;
+  width: 1.44em;
+  height: 1.44em;
+}
+
+.search a {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+li a.shop {
+  background-image: url(../images/social_shopping.svg);
+}
+
+li a.facebook {
+  background-image: url(../images/social_facebook.svg);
+}
+
+li a.twitter {
+  background-image: url(../images/social_twitter.svg);
+}
+
+li a.instagram {
+  background-image: url(../images/social_instagram.svg);
+}
+
+.search a {
+  background-image: url(../images/search.svg);
+}
+
+// Main menu states.
+header .main-menu {
+  @include link-states;
+}
+
+header .site-name,
+.language-switcher-language-url li {
+  @include link-states;
+}
+
+// Footer states.
+footer p,
+footer .legal a {
+  color: $menu-body; // default for menu items.
+}
+
+footer .footer-menu>ul>li>ul>li.menu-item a {
+  color: $menu-item;
+}
+
+footer .legal,
+.region-footer .footer-menu {
+  @include link-states;
+}
+
+footer .legal {
+  @include link-border;
+}
+
+// Active trails.
+li.menu-item--active-trail {
+  @include color-transition;
+
+  >a {
+    color: $menu-active !important;
+  }
+
+  >a:hover {
+    color: $menu-default !important;
+  }
+}
+
+// Social media.
+// Footer logo positioning.
+.region-footer .logo {
+  display: block;
+  background-image: url(../images/AAR.svg);
+  background-repeat: no-repeat;
+  max-width: 100%;
+  height: 75px;
+  text-indent: -9000px;
+  margin-top: 3px;
+  margin-right: 2rem;
+
+  @include mq($from: desktop) {
+    margin-right: 0rem;
+  }
+}

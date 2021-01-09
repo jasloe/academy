@@ -1,0 +1,93 @@
+// .breadcrumb,
+// .region-page-title,
+// .page-node-type-page article .paragraph,
+// .page-node-type-page article .blazy__caption,
+// .page-node-type-events article .blazy__caption,
+// .user-login-form {
+//   padding-left: 1rem;
+// }
+
+// .path-people-rome-prize-fellows .region-content,
+// .path-people-italian-fellows .region-content,
+// .path-people-residents .region-content {
+//   padding-left: 1rem;
+// }
+
+// @include mq($until: desktop) {
+
+//   .path-news-press-releases .region-content,
+//   .path-news-coverage .region-content {
+//     padding: 0 1rem;
+//   }
+// }
+
+// .path-research-resources-useful-links,
+// .path-research-resources-libraries-institutions,
+// .path-research-resources-research-databases,
+// .path-research-resources-electronic-journals {
+//   .region-content {
+//     padding: 1rem;
+
+//     @include mq($from: wide) {
+//       padding: 0rem;
+//     }
+//   }
+// }
+
+// .page-node-type-events article {
+
+//   .field-events-event-series,
+//   .field-events-rel-places,
+//   .field-events-event-type,
+//   .field-events-event-dates {
+//     padding-left: 1rem;
+
+//     @include mq($from: wide) {
+//       padding-left: 0rem;
+//     }
+//   }
+// }
+
+// @include mq($from: wide) {
+
+//   .breadcrumb,
+//   .region-page-title,
+//   .path-people-rome-prize-fellows .region-content,
+//   .page-node-type-page article .paragraph,
+//   .page-node-type-page article .blazy__caption,
+//   .page-node-type-events article .blazy__caption,
+//   .user-login-form {
+//     padding-left: 0rem;
+//   }
+
+//   .path-people-rome-prize-fellows .region-content,
+//   .path-people-italian-fellows .region-content,
+//   .path-people-residents .region-content {
+//     padding-left: 0rem;
+//   }
+// }
+
+
+
+// // .breadcrumb li:last-child:after {
+// //   content: "";
+// //   padding-right: 0;
+// // }
+
+// @include mq($from: desktop) {
+
+//   .path-events .region-content,
+//   .section-front .region-content,
+//   .path-news .region-content {
+//     padding: 0 1rem;
+//   }
+// }
+
+// @include mq($from: wide) {
+
+//   .path-events .region-content,
+//   .section-front .region-content,
+//   .path-news .region-content {
+//     padding: 0rem;
+//   }
+// }

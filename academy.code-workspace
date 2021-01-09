@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "scss"
+    },
+    {
+      "path": "templates"
+    },
+    {
+      "path": "../../../core/themes/stable/templates"
+    }
+  ],
+  "settings": {}
+}

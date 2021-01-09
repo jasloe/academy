@@ -1,0 +1,89 @@
+.region-footer {
+  display: flex;
+  flex-flow: row;
+
+  .logo,
+  .footer-menu {
+    position: relative;
+  }
+
+  .logo {
+    flex-basis: 24%;
+  }
+
+  .footer-menu {
+    flex-basis: 76%;
+  }
+}
+
+// footer menu
+footer {
+  border-top: 1px solid $black;
+}
+
+.region-footer, .region-footer-second {
+  padding: 2rem 1rem 0rem 1rem;
+
+  @include mq($from: desktop) {
+    padding: 2rem 1rem 0rem 1rem;
+  }
+
+    @include mq($from: wide) {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+}
+
+
+// footer menu default
+
+.footer-menu>ul {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.footer-menu>ul>li {
+  flex-basis: 50%;
+}
+
+.footer-menu>ul>li>ul>li.menu-item {
+  display: none;
+}
+
+@include mq($from: tablet, $until: desktop) {
+  .footer-menu>ul>li {
+    padding-bottom: 1rem;
+    flex-basis: 50%;
+    padding-right: 1rem;
+  }
+
+  .footer-menu>ul>li>ul>li.menu-item {
+    display: flex;
+  }
+}
+
+@include mq($from: desktop) {
+  .footer-menu>ul>li {
+    padding-bottom: 4rem;
+    flex-basis: 25%;
+    padding-right: 1rem;
+  }
+
+  .footer-menu ul>li>ul>li.menu-item {
+    display: flex;
+  }
+}
+
+.region-footer-second {
+  line-height: 1.4 !important;
+  .social {
+    margin-bottom: 1.4rem;
+  }
+
+  .social, .legal {
+    .menu {
+      display: flex;
+    }
+  }
+}
+

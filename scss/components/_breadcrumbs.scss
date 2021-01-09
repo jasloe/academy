@@ -1,0 +1,15 @@
+.breadcrumb ol {
+  display: flex;
+}
+
+.breadcrumb li {
+  font-family: $display-serif;
+  @include font-size(1.5rem);
+}
+
+.breadcrumb li:after {
+  content: " \2F";
+  padding-right: 5px;
+  @include font-size(1.3rem);
+  vertical-align: baseline;
+}

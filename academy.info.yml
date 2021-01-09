@@ -1,0 +1,19 @@
+name: Academy
+type: theme
+description: Academy, a subtheme of Stable
+core: 8.x
+base theme: stable
+libraries:
+  - academy/global-styling
+  - academy/global-scripts
+regions:
+  header_pre: Pre-header
+  header: Header
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  page_title: Page title
+  content_pre: Pre-content
+  content: Content
+  callout: Callout
+  footer: Footer
+  footer_second: Second footer

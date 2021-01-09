@@ -1,0 +1,464 @@
+p {
+  @include body;
+}
+
+// Section front vertical formatting & anchor link overlay.
+.section-front {
+  .region-content .card {
+    position: relative;
+    margin-bottom: 2rem;
+
+    @include card-states;
+
+    h2,
+    p {
+      padding-top: 1rem;
+    }
+
+    p {
+      padding-right: 3%;
+    }
+
+    .more {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.card .more {
+  filter: brightness(.5) sepia(1) hue-rotate(180deg) saturate(5) !important;
+}
+
+// Events details.
+.node--type-events {
+
+  .field-events-event-series,
+  .field-events-event-type,
+  .field-events-rel-places,
+  .field-events-event-dates {
+    @include gutter;
+    @include body;
+
+    @include mq($from: wide) {
+      @include no-gutter;
+    }
+  }
+
+  .field-events-event-dates {
+    padding-top: 1rem;
+  }
+
+  .field-events-image {
+    margin-top: 1rem;
+  }
+}
+
+// news/events vertical formatting & anchor link overlay
+.path-partecipazione-programmi-accademici,
+.path-apply-academic-programs,
+.path-events,
+.path-news,
+.path-quick-news,
+.path-society-of-fellows {
+  .region-content .card {
+    position: relative;
+    transition: all 0.22s;
+    margin-bottom: 2rem;
+  }
+
+  .card-link {
+    font-size: 0;
+  }
+
+  .card-link a span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .type {
+    padding-top: 1rem;
+  }
+
+  h2 {
+    padding-top: .8rem;
+  }
+
+  .type {
+    @include title-sans;
+  }
+
+
+  p.datetime,
+  p.summary {
+    padding-top: 1rem;
+  }
+
+  p {
+    padding-right: 3%;
+  }
+
+  .more {
+    margin-top: 1rem;
+  }
+}
+
+.path-partecipazione-programmi-accademici .programs.card p,
+.path-apply-academic-programs .programs.card p,
+.path-news-quick-news .news-event.card p {
+  padding-top: 1rem;
+}
+
+
+// News/event body. Basic page node formatting below.
+.region-content {
+
+  .paragraph,
+  .body {
+    // set margin above first paragraph
+    margin-top: 2rem;
+  }
+}
+
+.region-content {
+
+  .page-section p,
+  .body p {
+    padding-bottom: 1rem;
+  }
+}
+
+.region-content {
+
+  .page-section p:last-child,
+  .body p:last-child {
+    padding-bottom: 0rem;
+  }
+}
+
+// Page sections.
+.region-content {
+
+  .page-section,
+  .body {
+    @include gutter;
+  }
+}
+
+@include mq($from: desktop) {
+  .region-content {
+    .body {
+      padding-left: 0rem;
+      padding-right: 15%;
+      margin-left: 25%;
+    }
+  }
+}
+
+// People grid.
+@include mq($until: mobile) {
+
+  .people>h3,
+  .people h2,
+  .people .year {
+    padding-left: 1rem;
+  }
+}
+
+.people>h3 {
+  width: 100%;
+  padding-top: .8rem;
+  margin-bottom: .5rem;
+  @include title-sans;
+  @include font-size(1.4rem);
+  @include hard-rule-top;
+}
+
+
+.path-people .person {
+  line-height: 1;
+}
+
+.person.card {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.person.card .media {
+  margin-bottom: 0.5rem;
+}
+
+.person.card .year {
+  @include font-size(1.4rem);
+  line-height: 1.2;
+}
+
+.card .person-inner {
+  position: relative;
+  transition: all 0.22s;
+
+  &:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 0.9;
+    color: red;
+    transition: all 0.22s;
+  }
+
+  .card-link {
+    opacity: 0;
+    font-size: 0;
+  }
+
+  .card-link a span {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+}
+
+// People pseudo-link.
+.person.card {
+  position: relative;
+  transition: all 0.22s;
+
+  &:hover {
+    cursor: hand;
+    cursor: pointer;
+    opacity: 0.9;
+    color: red;
+    transition: all 0.22s;
+  }
+
+  .card-link {
+    opacity: 0;
+    font-size: 0;
+  }
+
+  .card-link a span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+}
+
+// People detail.
+.person-detail {
+  display: flex;
+  flex-direction: column;
+}
+
+// Person detail gutters.
+.person-detail .col-2 {
+  padding: 0 1rem;
+}
+
+// Person detail spacing, type.
+.person-detail {
+
+  h2,
+  .paragraph {
+    margin-top: 1rem;
+  }
+
+  .media {
+    background-color: transparent;
+  }
+
+  .field {
+    @include body;
+  }
+
+  .field__label {
+    font-family: $display-sans;
+    padding-top: 1rem;
+  }
+}
+
+// People detail mq.
+@include mq($from: tablet) {
+  .person-detail {
+    display: flex;
+    flex-direction: row;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    .col-1 {
+      flex-basis: 40%;
+    }
+
+    .col-2 {
+      flex-basis: 60%;
+    }
+
+  }
+}
+
+@include mq($from: tablet, $until: wide) {
+  .person-detail {
+    .col-1 {
+      padding-left: 1rem;
+    }
+  }
+}
+
+// Press list layout.
+.press-list {
+
+  .press-list--item {
+    margin-bottom: 5rem;
+  }
+
+  .field-press-date,
+  .file {
+    @include title-sans;
+  }
+
+  h2 {
+    padding-top: .5rem;
+  }
+
+  .field__items {
+    display: flex;
+    padding-top: 1.3rem;
+
+    .field:first-child {
+      padding-right: 2rem;
+    }
+  }
+}
+
+// Press list link states.
+.press-list .file {
+  @include link-states;
+  @include link-border;
+}
+
+
+// Publication list layout.
+.publication-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.publication-catalog:last-child {
+  margin-bottom: 0rem;
+}
+
+// Publication grid gutters.
+.publication-wrapper .col-2 {
+  padding: 0 1rem;
+}
+
+// Publication detail spacing, type.
+.publication-wrapper .publication-catalog {
+  display: flex;
+}
+
+.publication-wrapper .publication-catalog span {
+  padding: 0 0.25rem;
+}
+
+
+.publication-wrapper .col-2 {
+  margin-top: 1rem;
+
+  h2 {
+    font-family: $dignitas;
+    @include font-size(2.1rem);
+    font-weight: 100;
+    padding-bottom: 1rem;
+    text-transform: initial;
+  }
+
+  .body {
+    margin-top: 1rem;
+    margin-left: 0rem;
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  @include body;
+
+}
+
+.publication-catalog .field {
+  padding-bottom: 0rem;
+
+  &:after {
+    content: "/";
+    margin: 0 0.2rem;
+  }
+
+  &:last-child:after {
+    content: "";
+  }
+}
+
+.publication-description .field {
+  padding-bottom: 1rem;
+}
+
+.publication-detail .body p {
+  padding-bottom: 1rem;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
+}
+
+// Publication media queries.
+@include mq($from: tablet) {
+  .publication-wrapper {
+    flex-direction: row;
+
+    .col-1 {
+      flex-basis: 40%;
+    }
+
+    .col-2 {
+      flex-basis: 60%;
+      margin-top: 0rem;
+    }
+  }
+}
+
+@include mq($from: tablet, $until: wide) {
+  .publications {
+    padding-left: 1rem;
+  }
+}
+
+
+.publication-catalog {
+  flex-direction: column;
+
+  .field {
+    padding-bottom: 0rem;
+
+
+    &:after {
+      content: "";
+      margin: 0rem;
+    }
+
+    &:last-child:after {
+      content: "";
+    }
+
+    span {
+      padding: 0rem;
+    }
+  }
+}

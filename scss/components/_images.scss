@@ -1,0 +1,96 @@
+.b-lazy,
+.b-responsive {
+  // opacity: 0 !important;
+  transition: opacity 350ms ease-in-out;
+}
+
+.b-loaded {
+  // opacity: 1 !important;
+  transition: opacity 350ms ease-in-out;
+}
+
+/* Needed to display preloader with CSS BG image, otherwise hidden. */
+.b-loaded,
+.b-error,
+.media--loading.media--background {
+  opacity: 1;
+}
+
+// turn off the hideous preloader
+.media--loading::before {
+  display: none !important;
+}
+
+
+.media {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 0rem;
+  padding-bottom: 56.25%;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100% !important;
+  }
+}
+
+
+// Person grid wrapper.
+.person .person-inner {
+  .media {
+    display: block;
+    position: relative;
+    overflow: initial;
+    height: auto;
+    padding-bottom: initial;
+    background-color: transparent;
+
+    img {
+      position: initial;
+      height: 100% !important;
+      width: auto;
+      background-color: transparent;
+    }
+  }
+}
+
+// People detail image.
+.person-detail {
+  .media {
+    display: block;
+    position: relative;
+    overflow: initial;
+    height: auto;
+    padding-bottom: initial;
+    background-color: transparent;
+
+    img {
+      position: initial;
+      height: auto;
+      width: 100%;
+      background-color: transparent;
+    }
+  }
+}
+
+// Publication detail image.
+.publication-wrapper {
+  .media {
+    display: block;
+    position: relative;
+    overflow: initial;
+    height: auto;
+    padding-bottom: initial;
+    background-color: transparent;
+
+    img {
+      position: initial;
+      height: auto;
+      width: 100%;
+      background-color: transparent;
+    }
+  }
+}

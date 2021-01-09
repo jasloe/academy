@@ -1,0 +1,61 @@
+// use for node titles
+h1.title {
+  @include font-size($large);
+  @include title-serif;
+  letter-spacing: .0375rem;
+}
+
+// use for page section paragraph titles
+h2 {
+  @include font-size(2.1rem);
+  @include title-serif;
+}
+
+h3 {
+  @include font-size(1rem);
+  @include title-sans;
+  padding: .5rem 0;
+}
+
+.section-front,
+.page-node-type-programs,
+.page-node-type-page,
+.page-node-type-people {
+
+  h1,
+  h2 {
+    @include title-sans;
+  }
+}
+
+// .field-program-dates .field__label {
+//   @include title-sans;
+//   @include font-size($medium);
+// }
+
+
+.path-events,
+.path-news,
+.path-publications,
+.path-society-of-fellows,
+.path-apply-academic-programs,
+.path-partecipazione-programmi-accademici {
+  h1 {
+    @include title-sans;
+  }
+}
+
+
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1;
+}
+
+h4,
+h5,
+h6 {
+  @include font-size(1rem);
+}

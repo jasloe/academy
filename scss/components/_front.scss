@@ -1,0 +1,386 @@
+// Vertical spacing.
+.front-container {
+  margin-bottom: 4rem;
+}
+
+@include mq($from: tablet) {
+  .front-container {
+    margin-bottom: 7vw;
+  }
+}
+
+
+// Left-margin.
+.front-container.front-news h2,
+.front-container.front-fellows>h2,
+.front-container.front-fellows header,
+.front-container.front-residents>h2 {
+  padding-left: 1rem;
+}
+
+.front-container.front-fellows,
+.front-container.front-residents {
+
+  .person-title,
+  .person-affiliation {
+    padding-left: 1rem;
+    line-height: 1;
+  }
+}
+
+@include mq($from: wide) {
+
+  .front-container.front-news h2,
+  .front-container.front-fellows>h2,
+  .front-container.front-fellows header,
+  .front-container.front-residents>h2 {
+    padding-left: 0rem;
+  }
+
+  .front-container.front-fellows,
+  .front-container.front-residents {
+
+    .person-title,
+    .person-affiliation {
+      padding-left: 0rem;
+    }
+  }
+}
+
+.front-container.front-news {
+  .news__items {
+    padding: 0 1rem;
+  }
+
+  .news__item {
+    padding-bottom: 1rem;
+  }
+}
+
+@include mq($from: wide) {
+  .front-container.front-news {
+    .news__items {
+      padding: 0rem;
+    }
+  }
+}
+
+// Containers.
+.front-container.front-news>h2 {
+
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+}
+
+.front-container.front-residents>h2 {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.front-container.front-fellows header {
+  padding-top: 0;
+  padding-bottom: 1rem;
+  margin: 0 0 1.5rem 0;
+}
+
+// Containers, rules.
+.front-container.front-news h2,
+.front-container.front-fellows header,
+.front-container.front-residents>h2 {
+  @include border-bottom;
+}
+
+.front-container.front-news {
+  .news__items {
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: space-between;
+
+    .news__item {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+@include mq($from: desktop) {
+  .front-container.front-news {
+    .news__items {
+      flex-direction: row;
+
+      .news__item {
+        flex-basis: 30%;
+      }
+    }
+  }
+}
+
+.news__item a {
+  font-family: $dignitas;
+  @include font-size(2.1rem);
+  line-height: 1;
+
+  em {
+    font-family: $dignitasital;
+  }
+}
+
+.news__item time {
+  font-family: $dignitas;
+  @include font-size(1.4rem);
+}
+
+.front-container {
+
+  header,
+  .person-affiliation {
+    @include font-size(1.4rem);
+  }
+}
+
+.front-container.front-fellows {
+  header {
+    font-family: $dignitas;
+    text-transform: initial;
+
+    a {
+      &:after {
+        content: "/";
+        padding: 0 0.3rem;
+      }
+
+      &:last-child:after {
+        content: "";
+      }
+    }
+  }
+}
+
+// cta
+.home {
+  .cta__container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}
+
+.home .cta__container {
+  padding: 0 1rem;
+
+  @include mq($from: wide) {
+    padding: 0rem;
+  }
+}
+
+.home .cta__container {
+
+  .cta__left,
+  .cta__right {
+    flex-basis: 50%;
+
+  }
+
+  .cta__left {
+    padding-right: 2rem;
+
+    .paragraph {
+      margin-top: 0rem;
+    }
+
+    .page-section {
+      padding: 0;
+    }
+
+    .page-section h2 {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .paragraph__col-2 p {
+      padding: 2rem 0;
+      @include font-size(1.4rem);
+    }
+
+    h2.pretitle {
+      color: $gray;
+    }
+
+    .section-link__wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .section-link a:first-child {
+      margin-right: 2rem;
+    }
+
+    .section-link a:first-child {
+      width: 10rem;
+    }
+
+    .section-link a:not(:first-child) {
+      border: none !important;
+      border-bottom: 2px solid $black;
+      width: auto;
+      padding: 0;
+    }
+
+    .section-link a:not(:first-child):hover {
+
+      background: initial;
+    }
+  }
+
+  .cta__right .media__image {
+    width: 100%;
+  }
+}
+
+
+// cta mq
+@include mq($from: desktop) {
+  .home .cta__container {
+    flex-direction: row;
+  }
+}
+
+@include mq($until: desktop) {
+  .home .cta__title {
+    margin-top: 1rem;
+  }
+
+  .cta__left {
+    .paragraph__col-2 p {
+      padding: 1rem 0 !important;
+    }
+  }
+}
+
+// join us
+.home {
+  .front-join-us {
+    padding: 0 1rem;
+    background-color: $accent;
+    padding: 3rem;
+  }
+
+  .front-join-us,
+  .link__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .front-join-us {
+    h2 {
+      padding-bottom: 2rem;
+    }
+
+    a {
+      padding-bottom: 1rem;
+      font-family: $tradegothiccond;
+      text-transform: uppercase;
+      @include font-size(1.8rem);
+      display: flex;
+      justify-content: flex-start;
+      line-height: 1;
+    }
+  }
+}
+
+.home {
+  .front-join-us {
+    h2 {
+      font-family: $dignitas;
+      text-transform: initial;
+      @include font-size(2.7rem);
+    }
+
+    a {
+      color: $black;
+      transition: color 0.22s;
+    }
+
+    a:before {
+      background: url(../images/arrow_large_gray.svg) no-repeat 0 0;
+      height: 24px;
+      width: 24px;
+      content: "";
+      margin-top: 3px;
+      padding-left: 2rem;
+    }
+
+    a:hover {}
+  }
+}
+
+@include mq($from: tablet) {
+  .home .front-join-us {
+    display: flex;
+    flex-direction: initial;
+    justify-content: space-between;
+  }
+}
+
+// slick overrides
+.home .person-title {
+  padding-top: 0.5rem;
+}
+
+.home .slide__title {
+  margin: 0;
+  line-height: 1;
+}
+
+.home .slide__description {
+  @include font-size(1.4rem);
+  font-family: $dignitas;
+  font-weight: 100;
+}
+
+.home .slick:hover {
+  cursor: pointer;
+}
+
+.home {
+
+  .field-media-image,
+  .media--slick img {
+    padding: 0 0.1rem;
+  }
+}
+
+.slick-arrow::before {}
+
+.slick-prev {
+  margin-left: 1rem;
+}
+
+.slick-next {
+  margin-right: 1rem;
+}
+
+.slide__caption {
+  padding: 0.5rem 0 0;
+  margin: 0;
+  line-height: 1;
+}
+
+.front-container .paragraph {
+  margin-top: 0rem;
+  padding-top: .2rem;
+}
+
+.front-fellows,
+.front-residents {
+  .field-affil-discipline {
+    @include font-size(1.4rem);
+    font-weight: initial;
+  }
+}
+
+.meet-the-fellows a {
+  @include font-size(1.4rem);
+  font-weight: initial;
+}

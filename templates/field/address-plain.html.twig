@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Default template for the 'plain' address formatter.
+ *
+ * Available variables:
+ *   - given_name: Given name.
+ *   - additional_name: Additional name.
+ *   - family_name: Family name.
+ *   - organization: Organization.
+ *   - address_line1: First address line.
+ *   - address_line2: Second address line.
+ *   - postal_code: Postal code.
+ *   - sorting_code: Sorting code.
+ *   - dependent_locality: The dependent locality.
+ *     - dependent_locality.code: Dependent locality code.
+ *     - dependent_locality.name: Dependent locality name.
+ *   - locality: The locality subdivision.
+ *     - locality.code: Locality code.
+ *     - locality.name: Locality name.
+ *   - administrative_area: The administrative area subdivision.
+ *     - administrative_area.code: Administrative area code.
+ *     - administrative_area.name: Administrative area name.
+ *   - country: The country.
+ *     - country.code: Country code.
+ *     - country.name: Country name.
+ *
+ * if a subdivision (dependent_locality, locality, administrative_area) was
+ * entered, the array will always have a code. If it's a predefined subdivision,
+ * it will also have a name. The code is always prefered.
+ *
+ * @ingroup themeable
+ */
+#}
+<div class="address">
+	{% if address_line1 %}
+		<div class="address-street">{{ address_line1 }}</div>
+	{% endif %}
+	{% if address_line2 %}
+		<span>{{ address_line2 }}</span>
+	{% endif %}
+	{% if (country.name == "United States") or (country.name == "Stati Uniti") %}
+		<div class="locality">{{ locality }},
+			{{ administrative_area.code}}</div>
+
+		<div class="country">{{ country.name }}</div>
+	{% else %}
+		<div class="locality">
+			<span>{{ locality }},
+				{{ country.name }}</span>
+		</div>
+	{% endif %}
+</div>

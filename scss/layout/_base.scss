@@ -1,0 +1,135 @@
+.layout-container {
+  margin-bottom: 1rem;
+}
+
+main {
+  margin-bottom: 3rem;
+}
+
+
+.layout-content,
+.region-footer,
+.region-footer-second {
+  max-width: $max-vw;
+  margin: 0 auto;
+}
+
+
+// Section indices.
+.section-front .region-content {
+  display: flex;
+  flex-direction: column;
+}
+
+@include mq($from: desktop) {
+  .section-front .region-content {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .section-front .region-content .card {
+    flex-basis: calc(50% - 1rem);
+  }
+}
+
+// Lists.
+.path-partecipazione-programmi-accademici,
+.path-apply-academic-programs,
+.path-events,
+.path-news,
+.path-society-of-fellows {
+  .region-content {
+
+    .news-events.flex,
+    .programs.flex {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .news-events.flex .card,
+    .programs.flex .card {
+      flex-basis: calc(50% - 1rem);
+    }
+  }
+}
+
+@include mq($from: desktop) {
+
+  .path-partecipazione-programmi-accademici,
+  .path-apply-academic-programs,
+  .path-events,
+  .path-news,
+  .path-society-of-fellows {
+    .region-content {
+
+      .news-events.flex,
+      .programs.flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      .news-events.flex .card,
+      .programs.flex .card {
+        flex-basis: calc(50% - 1rem);
+      }
+    }
+  }
+}
+
+// People.
+.path-people .people {
+  display: flex;
+  flex-direction: column;
+}
+
+@include mq($from: tablet) {
+  .path-people .people {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .people .person {
+    flex-basis: 20%;
+  }
+}
+
+// Research.
+.list-wrapper {
+
+  display: flex;
+  flex-direction: column;
+
+  .record {
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    @include border-bottom;
+  }
+
+  .resource-title {
+    @include title-sans;
+    text-transform: initial;
+    @include font-size($small);
+
+  }
+}
+
+@include mq($from: desktop) {
+  .list-wrapper {
+    flex-direction: row;
+
+
+    .col-1 {
+      flex-basis: 25%;
+    }
+
+    .col-2 {
+      flex-basis: 75%;
+    }
+
+    .record {
+      padding-right: 15%;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+/* If logged in, turn off headroom and push header down */
+
+.path-user-login {
+  h1 {
+    padding-bottom: 1rem;
+    @include font-size(2rem);
+  }
+}
+
+// User login form
+.user-login-form {
+
+  input[type="text"],
+  input[type="password"] {
+    width: calc(50% - 0.8rem);
+    height: 2rem;
+    text-transform: none;
+    color: $black;
+
+    font-stretch: normal;
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 0px;
+    padding: 0.3rem 0.3rem 0.3rem 0.5rem;
+  }
+
+  input[type="submit"] {
+    margin-top: 1rem;
+  }
+
+  .form-item-persistent-login {
+    margin-top: 1rem;
+  }
+
+  .button {
+    display: inline-block;
+    cursor: pointer;
+    background: $gray;
+    text-transform: uppercase;
+    @include font-size(0.8rem);
+    color: $black;
+    border: none;
+    padding: 1rem 1.5rem;
+
+    &:hover {
+      color: $black;
+    }
+  }
+
+  .description {
+    padding: 0.3rem;
+  }
+}

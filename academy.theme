@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the tema theme.
+ */
+
+use Drupal\Core\Url;
+
+/**
+ * Implements template_preprocess_html().
+ * @param array $variables
+ */
+function academy_preprocess_html(&$variables) {
+
+  if (!empty($variables['page']['sidebar_first'])) {
+    $sidebar_left = $variables['page']['sidebar_first'];
+  }
+
+  if (!empty($variables['page']['sidebar_second'])) {
+    $sidebar_right = $variables['page']['sidebar_second'];
+  }
+
+  // Dynamic sidebars.
+  if (!empty($sidebar_left) && !empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'two-sidebars';
+  }
+  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-second';
+  }
+  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
+    $variables['attributes']['class'][] = 'one-sidebar';
+    $variables['attributes']['class'][] = 'sidebar-first';
+  }
+  else {
+  $current_path = \Drupal::service('path.current')->getPath();
+  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $path_alias = ltrim($path_alias, '/');
+  $variables['attributes']['class'][] = 'path-' . \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
+  }
+//kint($variables);
+}
+
+/**
+ * Implements template_preprocess_page.
+ * @param array $variables
+ */
+function academy_preprocess_page(&$variables) {
+  $site_name = \Drupal::configFactory()->get('system.site')->get('name');
+  $variables['linked_site_name'] = ['#type' => 'link', '#title' => $site_name, '#url' => Url::fromRoute('<front>')];
+}
+
+/**
+ * Implements template_preprocess_node.
+ * @param array $variables
+ */
+function academy_preprocess_node(&$variables) {
+
+}
+/**
+
+ * Change the link title of the language block.
+ */
+function academy_preprocess_links__language_block(&$variables) {
+  $variables['links']['en']['link']['#title'] = 'EN';
+  $variables['links']['it']['link']['#title'] = 'IT';
+}
+
+/**
+ * Implements hook_theme_suggestions_page_alter().
+ */
+function academy_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $suggestions[] = 'page__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_theme_suggestions_block_alter().
+ */
+function academy_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  if (isset($variables['elements']['content']['#block_content'])) {
+    array_splice($suggestions, 1, 0, 'block__' . $variables['elements']['content']['#block_content']->bundle());
+  }
+}
+
+function academy_preprocess_region(&$variables) {
+  $variables['url'] = $_SERVER['REQUEST_URI'];
+  $variables['#cache']['contexts'][] = 'url.path';
+}
