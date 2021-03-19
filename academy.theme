@@ -8,41 +8,6 @@
 use Drupal\Core\Url;
 
 /**
- * Implements template_preprocess_html().
- * @param array $variables
- */
-function academy_preprocess_html(&$variables) {
-
-  if (!empty($variables['page']['sidebar_first'])) {
-    $sidebar_left = $variables['page']['sidebar_first'];
-  }
-
-  if (!empty($variables['page']['sidebar_second'])) {
-    $sidebar_right = $variables['page']['sidebar_second'];
-  }
-
-  // Dynamic sidebars.
-  if (!empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'two-sidebars';
-  }
-  elseif (empty($sidebar_left) && !empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-second';
-  }
-  elseif (!empty($sidebar_left) && empty($sidebar_right)) {
-    $variables['attributes']['class'][] = 'one-sidebar';
-    $variables['attributes']['class'][] = 'sidebar-first';
-  }
-  else {
-  $current_path = \Drupal::service('path.current')->getPath();
-  $path_alias = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
-  $path_alias = ltrim($path_alias, '/');
-  $variables['attributes']['class'][] = 'path-' . \Drupal\Component\Utility\Html::cleanCssIdentifier($path_alias);
-  }
-//kint($variables);
-}
-
-/**
  * Implements template_preprocess_page.
  * @param array $variables
  */

@@ -1,7 +1,7 @@
 name: Academy
 type: theme
 description: Academy, a subtheme of Stable
-core: 8.x
+core_version_requirement: ^8 || ^9
 base theme: stable
 libraries:
   - academy/global-styling
